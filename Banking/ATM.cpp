@@ -25,8 +25,6 @@ bool ATM::verifyCard()
 	return currentCard->isValid();
 }
 
-
-
 bool ATM::requestPin(int pinCode)
 {
 	currentBankAccount = new BankAccount();
@@ -39,11 +37,11 @@ bool ATM::requestAmount(int amount)
 	return currentBankAccount->HasBankEnoughAmount(currentTransaction->getAmount());;
 }
 
-void ATM::DispenseCash()
-{
+void ATM::DispenseCash(){
+
+	currentBankAccount->WithdrawAmount(currentTransaction->getAmount());
 	currentTransaction->setSuccesful(true);
 	std::cout << "Giving: " << currentTransaction->getAmount() << std::endl;
-	currentBankAccount->WithdrawAmount(currentTransaction->getAmount());
 }
 
 void ATM::EjectCard()
@@ -77,6 +75,11 @@ void ATM::SetCard(Card* card)
 BankAccount* ATM::getCurrentBankAccount()
 {
 	return currentBankAccount;
+}
+
+BankServer* ATM::getBankServer()
+{
+	return bankServer;
 }
 
 void ATM::unInitialize()

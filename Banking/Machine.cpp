@@ -38,9 +38,14 @@ int main()
 	atm->DispenseCash();
 
 	std::cout << "New bank amount: " << atm->getCurrentBankAccount()->GetCurrentMoney() << std::endl;
-	std::cout << "Transaction succesful: " << atm->GetCurrentTransaction()->isSuccesful() << std::endl;
+	std::cout << "Transaction succesful: " << atm->getBankServer()->TransactionSuccesful(atm->GetCurrentTransaction()) << std::endl;
 
 	atm->EjectCard();
+	
+	std::cout << "Voor devs, unloading bankaccount/card/transactie" << std::endl;
+	std::cout << atm->getCurrentBankAccount() << std::endl;
+	std::cout << atm->GetCurrentCard() << std::endl;
+	std::cout << atm->GetCurrentTransaction() << std::endl;
 
 	return 0;
 }

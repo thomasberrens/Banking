@@ -16,6 +16,7 @@ public:
 	Transaction* GetCurrentTransaction();
 	void SetCard(Card* card);
 	BankAccount* getCurrentBankAccount();
+	BankServer* getBankServer();
 	void unInitialize();
 private:
 	bool verifyCard();
