@@ -6,7 +6,7 @@
 class ATM {
 public:
 	ATM();
-	void insertCard();
+	bool insertCard();
 	
 	bool requestPin(int pinCode);
 	bool requestAmount(int amount);

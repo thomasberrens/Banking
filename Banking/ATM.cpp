@@ -8,16 +8,12 @@ ATM::ATM()
 	bankServer = new BankServer();
 }
 
-void ATM::insertCard()
+bool ATM::insertCard()
 {
 	std::cout << "Inserting card..." << std::endl;
 	currentCard = new Card();
 
-	if (!bankServer->verifyCard(currentCard)) {
-		EjectCard();
-		return;
-	}
-
+	return bankServer->verifyCard(currentCard);
 }
 
 bool ATM::verifyCard()

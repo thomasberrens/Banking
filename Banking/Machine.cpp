@@ -10,7 +10,10 @@ int main()
 	ATM* atm;
 	atm = new ATM();
 	
-	atm->insertCard();
+	if (!atm->insertCard()) {
+		atm->EjectCard();
+		return 0;
+	}
 
 	int pinCode;
 	std::cout << "Je pincode: "; // Type a number and press enter
