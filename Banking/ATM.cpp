@@ -42,7 +42,7 @@ void ATM::DispenseCash(){
 
 void ATM::EjectCard()
 {
-	std::cout << "Ejecting card: " << currentCard << std::endl;
+	std::cout << "Ejecting card: " << currentCard->cardNumber() << std::endl;
 	currentCard->eject();
 	
 	unInitialize();

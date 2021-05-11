@@ -22,3 +22,8 @@ bool Card::validPin(int pinCode)
 {
 	return this->pinCode == pinCode;
 }
+
+int Card::cardNumber()
+{
+	return 17042002;
+}
